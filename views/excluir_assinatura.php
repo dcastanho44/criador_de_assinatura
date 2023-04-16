@@ -7,26 +7,17 @@
     include_once('./classes/Funcao.class.php');
     $db = new Database();
     $funcao = new Funcao();
+    $assinatura = new Assinatura();
 
     $id = $_GET['id'];
 
-    $query = "SELECT * FROM test.tb_assinaturas WHERE id = {$id}";
-    
-    $db->query = $query;
-    $db->content = NULL;
-
-    $rows = ($db->select());
+    $rows = $assinatura->obterAssinatura($id);
     foreach($rows as $select){
         $nome = ($select->nome);
         $empresa = ($select->empresa);
     }
 
-    $query = "DELETE FROM test.tb_assinaturas WHERE id = ?";
-    $content = array();
-    $content[] = array ($id, 'int');
-    $db->query = $query;
-    $db->content = $content;
-    $db->delete();
+    $rows = $assinatura->excluirAssinatura($id);
 
     @$arquivo = $funcao->obter_arquivo($nome, $empresa);
     @$arquivo = Assinatura::removeAcento("$nome-$empresa");

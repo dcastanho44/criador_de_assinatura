@@ -1,5 +1,13 @@
-<?php
-    class Assinatura {
+<?php	
+	include_once('Database.class.php');
+	
+	class Assinatura {
+		private $db;
+		
+		function __construct() {
+		    $this->db = new Database();
+		}
+
 		static function resize_image($file, $w, $h, $crop=FALSE) {
 		    list($width, $height) = getimagesize($file);
 		    $r = $width / $height;
@@ -60,5 +68,26 @@
 				imagettftext($jpg_image, 14, 0, 300, 139, $black, $font_path, $telefone);
 			}												
 			return $jpg_image;
+		}
+
+		public function obterAssinatura($id)
+		{
+			$query = "SELECT * FROM test.tb_assinaturas WHERE id = {$id}";
+    
+    		$this->db->query = $query;
+    		$this->db->content = NULL;
+
+    		$rows = ($this->db->select());
+			return $rows;
+		}
+		
+		public function excluirAssinatura($id)
+		{
+    		$query = "DELETE FROM test.tb_assinaturas WHERE id = ?";
+    		$content = array();
+    		$content[] = array ($id, 'int');
+    		$this->db->query = $query;
+    		$this->db->content = $content;
+    		$this->db->delete();
 		}
     }

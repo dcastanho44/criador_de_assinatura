@@ -10,13 +10,15 @@
     include_once(__DIR__ . '/../classes/Assinatura.class.php');
     $db = new Database();
     $funcao = new Funcao();
+    $assinatura = new Assinatura();
     
     if(@$_GET['id']){
         $id = $_GET['id'];
         
-        $db->query = "SELECT * FROM test.tb_assinaturas WHERE id = $id";
-        $db->content = NULL;
-        $rows = ($db->select());
+        // $db->query = "SELECT * FROM test.tb_assinaturas WHERE id = $id";
+        // $db->content = NULL;
+        // $rows = ($db->select());
+        $rows = $assinatura->obterAssinatura($id);
         foreach($rows as $select) {
             $id = ($select->id);
             $email = ($select->email);
@@ -39,7 +41,7 @@
                 <hr>
                 <div class="image">
                     <?php $arquivo = $funcao->obter_arquivo($nome, $empresa) ?>
-                    <img src="<?php echo $linkimagem ?>" width="500px">
+                    <img src="./assets/images/assinaturas/<?php echo $arquivo.".jpg" ?>" width="500px">
                 </div>
                 <hr>
             <?php endif; ?>
