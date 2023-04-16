@@ -4,7 +4,6 @@
     include_once(__DIR__ . '/../classes/Database.class.php');
     include_once(__DIR__ . '/../classes/Assinatura.class.php');
     include_once(__DIR__ . '/../classes/Funcao.class.php');
-    include_once(__DIR__ . '/../classes/UploadCare.class.php');
     $db = new Database();
     $funcao = new Funcao();
 
