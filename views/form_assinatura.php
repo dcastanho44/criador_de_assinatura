@@ -40,7 +40,7 @@
                 <hr>
                 <div class="image">
                     <?php $arquivo = $funcao->obter_arquivo($nome, $empresa) ?>
-                    <img src="./assets/images/assinaturas/<?php echo $arquivo.".jpg" ?>" width="500px">
+                    <img src="./assets/images/assinaturas/<?php echo $arquivo ?>" width="500px">
                 </div>
                 <hr>
             <?php endif; ?>

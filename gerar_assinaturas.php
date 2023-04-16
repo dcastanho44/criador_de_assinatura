@@ -32,5 +32,7 @@
         imagepng($image, $filename);
         imagedestroy($image);
 
+        echo 'Todas as assinaturas do banco foram geradas';
+
     }
 ?> 
