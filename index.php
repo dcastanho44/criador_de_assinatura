@@ -5,13 +5,6 @@
 	error_reporting(E_ALL);
 	ini_set('memory_limit', '-1'); 
 	date_default_timezone_set('America/Sao_Paulo');
-
-	$token = '310781d3-eeed-4097-a769-0a413828eee9';
-
-	if(!isset($_GET['token']) || ($token != $_GET['token'])){
-		echo 'Acesso não autorizado';
-		exit;
-	}
     
     include_once('./classes/Database.class.php');
     include_once('./classes/Pagination.class.php');

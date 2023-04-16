@@ -11,7 +11,7 @@
     $id = $_GET['id'];
     $id = (int)$id;
 
-    $query = "SELECT * FROM test.tb_assinaturas WHERE id = {$id}";
+    $query = "SELECT * FROM tb_assinaturas WHERE id = {$id}";
     
     $db->query = $query;
     $db->content = NULL;

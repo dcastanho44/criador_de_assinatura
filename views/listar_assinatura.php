@@ -63,7 +63,7 @@
 </div>
 <?php endif; ?>
 <?php
-        $db->query = "SELECT * FROM test.tb_assinaturas $where ORDER BY nome ASC";
+        $db->query = "SELECT * FROM tb_assinaturas $where ORDER BY nome ASC";
         $db->content = NULL;
         $rows = ($db->select());
         $count = 0;
@@ -115,7 +115,7 @@
     </thead>
     <tbody>
         <?php
-            $db->query = "SELECT * FROM test.tb_assinaturas $where ORDER BY nome ASC LIMIT $limit OFFSET $offset";
+            $db->query = "SELECT * FROM tb_assinaturas $where ORDER BY nome ASC LIMIT $limit OFFSET $offset";
             $db->content = NULL;
             $rows = ($db->select());
             foreach($rows as $select) :

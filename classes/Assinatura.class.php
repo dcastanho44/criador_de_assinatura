@@ -72,7 +72,7 @@
 
 		public function obterAssinatura($id)
 		{
-			$query = "SELECT * FROM test.tb_assinaturas WHERE id = {$id}";
+			$query = "SELECT * FROM tb_assinaturas WHERE id = {$id}";
     
     		$this->db->query = $query;
     		$this->db->content = NULL;
@@ -83,7 +83,7 @@
 		
 		public function excluirAssinatura($id)
 		{
-    		$query = "DELETE FROM test.tb_assinaturas WHERE id = ?";
+    		$query = "DELETE FROM tb_assinaturas WHERE id = ?";
     		$content = array();
     		$content[] = array ($id, 'int');
     		$this->db->query = $query;

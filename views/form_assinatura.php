@@ -15,7 +15,7 @@
     if(@$_GET['id']){
         $id = $_GET['id'];
         
-        // $db->query = "SELECT * FROM test.tb_assinaturas WHERE id = $id";
+        // $db->query = "SELECT * FROM tb_assinaturas WHERE id = $id";
         // $db->content = NULL;
         // $rows = ($db->select());
         $rows = $assinatura->obterAssinatura($id);
@@ -74,7 +74,7 @@
 		    				            <option value="">Selecione o cargo</option>
                                         <option value="">                   </option>
                                         <?php
-                                            $db->query = "SELECT DISTINCT cargo FROM test.tb_assinaturas ORDER BY cargo ASC";
+                                            $db->query = "SELECT DISTINCT cargo FROM tb_assinaturas ORDER BY cargo ASC";
                                             $db->content = NULL;
                                             $rows = ($db->select());
                                             foreach($rows as $select) :

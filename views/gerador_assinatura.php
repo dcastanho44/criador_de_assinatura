@@ -60,7 +60,7 @@
         if (!isset($id)) 
         {
 
-            $db->query = "SELECT * FROM test.tb_assinaturas WHERE nome = '$nome' AND empresa = '$empresa'";
+            $db->query = "SELECT * FROM tb_assinaturas WHERE nome = '$nome' AND empresa = '$empresa'";
             $db->content = NULL;
             $rows = ($db->select());
             foreach($rows as $select) 
@@ -80,7 +80,7 @@
             }
             else
             {
-                $query  = "INSERT INTO test.tb_assinaturas (email, nome, cargo, whatsapp, telefone, telefone2, empresa) ";
+                $query  = "INSERT INTO tb_assinaturas (email, nome, cargo, whatsapp, telefone, telefone2, empresa) ";
                 $query .= "VALUES (?, ?, ?, ?, ?, ?, ?)";
 
                 $content = array();
@@ -103,7 +103,7 @@
         elseif (isset($id))
         {   
 
-            $db->query = "SELECT * FROM test.tb_assinaturas WHERE id = $id";
+            $db->query = "SELECT * FROM tb_assinaturas WHERE id = $id";
             $db->content = NULL;
             $rows = ($db->select());
             foreach($rows as $select) {
@@ -111,7 +111,7 @@
                 $empresa_old = ($select->empresa);
             }
 
-            $query  = "UPDATE test.tb_assinaturas SET ";
+            $query  = "UPDATE tb_assinaturas SET ";
             $query .= "email = ?, nome = ?, cargo = ?, whatsapp = ?, telefone = ?, telefone2 = ?, empresa = ? ";
             $query .= "WHERE id = ?";
 
