@@ -28,7 +28,6 @@
             $telefone = ($select->telefone);
             $telefone2 = ($select->telefone2);
             $empresa = ($select->empresa);
-            $linkimagem = ($select->linkimagem);
         }
     }
 ?>  
